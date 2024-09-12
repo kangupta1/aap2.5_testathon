@@ -1,0 +1,16 @@
+---
+- name: Install and configure Apache web server
+  hosts: all
+  become: true
+  collections:
+    - community.general
+  tasks:
+    - name: Install Apache web server
+      ansible.builtin.package:
+        name: httpd
+        state: present
+    - name: Start and enable Apache web server
+      ansible.builtin.service:
+        name: httpd
+        state: started
+        enabled: true
