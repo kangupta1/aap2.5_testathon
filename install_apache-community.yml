@@ -1,6 +1,6 @@
 ---
 - name: Install and configure Apache web server
-  hosts: all
+  hosts: localhost
   become: true
   collections:
     - community.general
